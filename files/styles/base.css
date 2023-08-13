@@ -1,17 +1,24 @@
 @import url("https://fonts.googleapis.com/css?family=Karla");
 
+/* Dark Theme Variables */
+
 [data-theme="dark"] {
     --default-bg: rgb(29, 30, 32);
     --default-scrollbar-bg: rgb(128, 128, 128);
     --default-text: rgb(255, 255, 255);
     --default-invert: 1;
 }
+
+/* Light Theme Variables */
+
 [data-theme="light"] {
     --default-bg: rgb(226, 225, 223);
     --default-scrollbar-bg: rgb(127, 127, 127);
     --default-text: rgb(0, 0, 0);
     --default-invert: 0;
 }
+
+/* All */
 
 * {
     transition: all .5s;
@@ -34,9 +41,8 @@ body::-webkit-scrollbar-thumb {
     background-color: var(--default-scrollbar-bg);
     border-radius: 20px;
 }
-
-#page {
-    background: var(--default-bg);
+body::-webkit-scrollbar:horizontal {
+    display: none;
 }
 
 /* H1 */
@@ -59,26 +65,11 @@ img {
 /* Footer */
 
 footer {
-    position: relative;
-    bottom: 0;
     text-align: center;
     width: 100%;
 }
 
 /* Logo */
-
-.cursor {
-    position: fixed;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: #f5f5f5;
-    pointer-events: none;
-    mix-blend-mode: difference;
-    z-index: 999;
-
-    transition: transform 0.2s;
-}
 
 .logo {
     color: var(--default-text);
@@ -88,6 +79,8 @@ footer {
 .logo:link, .logo:visited, .logo:hover, .logo:active {
     text-decoration: none;
 }
+
+/* Theme buttons */
 
 .theme-button {
     position: absolute;
@@ -118,7 +111,7 @@ footer {
     border-radius: 5px;
 }
 
-/* Icons */
+/* Footer Icons */
 
 .footer-icons {
     display: flex;
@@ -127,29 +120,32 @@ footer {
     text-align: center;
 }
 
-.github-icon {
+.github-icon, .telegram-icon {
     filter: invert(var(--default-invert));
-    margin-right: 5px;
-}
-.telegram-icon {
-    filter: invert(var(--default-invert));
-    margin-left: 5px;
+    margin: 5px;
 }
 
-@media screen and (min-width: 80rem) {
+/* Responsive Content [For Desktop] */
+
+@media screen and (orientation: landscape) {
     h1 {
         font-size: 4vw;
     }
 
+    footer {
+        position: relative;
+        bottom: 0;
+    }
+
     .theme-button {
-        padding: 15px;
-        right: 10px;
-        top: 10px;
+        padding: 2vw;
+        right: 1vw;
+        top: 1vw;
     }
 
     .sun-icon, .moon-icon {
-        width: 24px;
-        height: 24px;
+        width: 1.75vw;
+        height: 1.75vw;
     }
 
     .logo {
@@ -162,22 +158,36 @@ footer {
         width: 75%;
         height: auto;
     }
+
+    .github-icon, .telegram-icon {
+        width: 1.75vw;
+        height: 1.75vw;
+    }
 }
 
-@media screen and (max-width: 80rem) {
+/* Responsive Content [For Mobile] */
+
+@media screen and (orientation: portrait) {
     h1 {
         font-size: 7vw;
     }
 
+    footer {
+        position: absolute;
+        right: 0px;
+        left: 0px;
+        bottom: 0px;
+    }
+
     .theme-button {
-        padding: 30px;
-        right: 20px;
-        top: 20px;
+        padding: 4vw;
+        right: 2vw;
+        top: 2vw;
     }
 
     .sun-icon, .moon-icon {
-        width: 48px;
-        height: 48px;
+        width: 4.5vw;
+        height: 4.5vw;
     }
 
     .logo {
@@ -189,5 +199,10 @@ footer {
     .entry-screenshot {
         width: 95%;
         height: auto;
+    }
+
+    .github-icon, .telegram-icon {
+        width: 4.5vw;
+        height: 4.5vw;
     }
 }
