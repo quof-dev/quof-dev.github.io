@@ -1,0 +1,193 @@
+@import url("https://fonts.googleapis.com/css?family=Karla");
+
+[data-theme="dark"] {
+    --default-bg: rgb(29, 30, 32);
+    --default-scrollbar-bg: rgb(128, 128, 128);
+    --default-text: rgb(255, 255, 255);
+    --default-invert: 1;
+}
+[data-theme="light"] {
+    --default-bg: rgb(226, 225, 223);
+    --default-scrollbar-bg: rgb(127, 127, 127);
+    --default-text: rgb(0, 0, 0);
+    --default-invert: 0;
+}
+
+* {
+    transition: all .5s;
+}
+
+/* Body */
+
+body {
+    background: var(--default-bg);
+    overflow: overlay;
+    font-family: Karla;
+}
+body::-webkit-scrollbar {
+    width: 5px;
+}
+body::-webkit-scrollbar-track {
+    background: transparent;
+}
+body::-webkit-scrollbar-thumb {
+    background-color: var(--default-scrollbar-bg);
+    border-radius: 20px;
+}
+
+#page {
+    background: var(--default-bg);
+}
+
+/* H1 */
+
+h1 {
+    color: var(--default-text);
+    font-weight: bold;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+/* Image */
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* Footer */
+
+footer {
+    position: relative;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+}
+
+/* Logo */
+
+.cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #f5f5f5;
+    pointer-events: none;
+    mix-blend-mode: difference;
+    z-index: 999;
+
+    transition: transform 0.2s;
+}
+
+.logo {
+    color: var(--default-text);
+    font-weight: bold;
+    text-decoration: none;
+}
+.logo:link, .logo:visited, .logo:hover, .logo:active {
+    text-decoration: none;
+}
+
+.theme-button {
+    position: absolute;
+    background: transparent;
+    border: none;
+}
+
+.sun-icon, .moon-icon {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    filter: invert(var(--default-invert));
+}
+
+/* Home */
+
+.home-entry {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 5%;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Entry Screenshot */
+
+.entry-screenshot {
+    border-radius: 5px;
+}
+
+/* Icons */
+
+.footer-icons {
+    display: flex;
+    margin: 2%;
+    justify-content: center;
+    text-align: center;
+}
+
+.github-icon {
+    filter: invert(var(--default-invert));
+    margin-right: 5px;
+}
+.telegram-icon {
+    filter: invert(var(--default-invert));
+    margin-left: 5px;
+}
+
+@media screen and (min-width: 80rem) {
+    h1 {
+        font-size: 4vw;
+    }
+
+    .theme-button {
+        padding: 15px;
+        right: 10px;
+        top: 10px;
+    }
+
+    .sun-icon, .moon-icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    .logo {
+        font-size: 3vw;
+        margin-left: 10px;
+        margin-bottom: 10px;
+    }
+
+    .entry-screenshot {
+        width: 75%;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 80rem) {
+    h1 {
+        font-size: 7vw;
+    }
+
+    .theme-button {
+        padding: 30px;
+        right: 20px;
+        top: 20px;
+    }
+
+    .sun-icon, .moon-icon {
+        width: 48px;
+        height: 48px;
+    }
+
+    .logo {
+        font-size: 8vw;
+        margin-left: 20px;
+        margin-bottom: 20px;
+    }
+
+    .entry-screenshot {
+        width: 95%;
+        height: auto;
+    }
+}

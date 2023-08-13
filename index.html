@@ -1,12 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Outfit">
-    <link rel="stylesheet" href="https://raw.githubusercontent.com/nanxiaobei/hugo-paper/main/assets/main.css">
-</head>
-<body>
-<h1>In developing! </h1>
-</body>
+<html lang="en" data-theme="light">
+    <head>
+        <meta charset="UTF-8">
+        <title>Quof</title>
+        <link rel="stylesheet" href="files/styles/base.css">
+    </head>
+
+    <body>
+        <header class="header">
+            <nav class="nav">
+                <a class="logo" href="./" accesskey="h" title="Quof (Alt + H)">Quof</a>
+                <button class="theme-button" data-theme-toggle>
+                    <img id="sun-icon" class="sun-icon" src="files/svg/sun.svg">
+                    <img id="moon-icon" class="moon-icon" src="files/svg/moon.svg">
+                </button>
+            </nav>
+        </header>
+
+        <main class="main">
+            <article class="home-info">
+                <header class="home-entry">
+                    <h1>Make it easy to view and<br>edit your text files with Quof!</h1>
+                    <img class="entry-screenshot" src="files/images/entry-screenshot.png">
+                </header>
+            </article>
+
+            <article class="extended-info">
+                <div class="extended-panel">
+                    <!-- <h1>There is a built-in translator</h1> -->
+                </div>
+            </article>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-icons">
+                <a href="https://github.com/menlis-smith">
+                    <img class="github-icon" src="files/svg/github.svg" width="24" height="24">
+                </a>
+                <a href="https://t.me/chazz_potato">
+                    <img class="telegram-icon" src="files/svg/telegram.svg" width="24" height="24">
+                </a>
+            </div>
+        </footer>
+
+        <div class="cursor"></div>
+    </body>
+
+    <script src="files/scripts/theme.js"></script>
 </html>
