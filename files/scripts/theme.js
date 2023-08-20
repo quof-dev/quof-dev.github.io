@@ -15,6 +15,8 @@ function calculateSettingAsThemeString({ localStorageTheme, systemSettingDark })
 function updateButton({ buttonEl, isDark }) {
     document.getElementById("sun-icon").style.opacity = isDark ? "1" : "0";
     document.getElementById("moon-icon").style.opacity = isDark ? "0" : "1";
+
+    document.getElementById("entry-screenshot").src = isDark ? "files/images/entry-screenshot-dark.png" : "files/images/entry-screenshot-light.png"
 }
 
 function updateThemeOnHtmlEl({ theme }) {

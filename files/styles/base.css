@@ -3,19 +3,49 @@
 /* Dark Theme Variables */
 
 [data-theme="dark"] {
-    --default-bg: rgb(29, 30, 32);
+    --default-bg: rgb(0, 0, 0);
     --default-scrollbar-bg: rgb(128, 128, 128);
     --default-text: rgb(255, 255, 255);
+    --default-panel-bg: rgba(255, 255, 255, 0.07);
+    --default-button: rgba(255, 255, 255, 0.05);
+    --default-button-hover: rgba(255, 255, 255, 0.1);
     --default-invert: 1;
+    --default-gradient: linear-gradient(
+            to left,
+            #ff5770,
+            #e4428d,
+            #c42da8,
+            #9e16c3,
+            #6501de,
+            #9e16c3,
+            #c42da8,
+            #e4428d,
+            #ff5770
+    );
 }
 
 /* Light Theme Variables */
 
 [data-theme="light"] {
-    --default-bg: rgb(226, 225, 223);
+    --default-bg: rgb(255, 255, 255);
     --default-scrollbar-bg: rgb(127, 127, 127);
     --default-text: rgb(0, 0, 0);
+    --default-panel-bg: rgba(0, 0, 0, 0.07);
+    --default-button: rgba(0, 0, 0, 0.05);
+    --default-button-hover: rgba(0, 0, 0, 0.1);
     --default-invert: 0;
+    --default-gradient: linear-gradient(
+            to left,
+            #ec5269,
+            #ce3d80,
+            #ab2793,
+            #8a14ab,
+            #5100b4,
+            #7d129b,
+            #a92891,
+            #bb3674,
+            #ec5269
+    );
 }
 
 /* All */
@@ -45,9 +75,9 @@ body::-webkit-scrollbar:horizontal {
     display: none;
 }
 
-/* H1 */
+/* H1, H2 */
 
-h1 {
+h1, h2 {
     color: var(--default-text);
     font-weight: bold;
     width: 100%;
@@ -60,6 +90,12 @@ h1 {
 img {
     max-width: 100%;
     max-height: 100%;
+}
+
+/* Button */
+
+button {
+    border: none;
 }
 
 /* Footer */
@@ -107,8 +143,58 @@ footer {
 
 /* Entry Screenshot */
 
+.screenshot-container {
+    background: transparent;
+    padding: 16px 24px;
+    position: relative;
+    border-radius: 8px;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, .01);
+
+    &::after {
+        position: absolute;
+        content: "";
+        top: 15px;
+        left: 0;
+        right: 0;
+        z-index: -1;
+        height: 100%;
+        width: 100%;
+        transform: scale(0.9) translateZ(0);
+        filter: blur(200px);
+        background: var(--default-gradient);
+        background-size: 200% 200%;
+    }
+}
+
 .entry-screenshot {
-    border-radius: 5px;
+    border-radius: 7px;
+}
+
+/* Download Panel */
+
+.download-info {
+    color: var(--default-text);
+    background-color: var(--default-panel-bg);
+    margin: 40px auto;
+    padding: 16px;
+    text-align: center;
+    backdrop-filter: blur(15px);
+}
+
+/* Download button */
+
+.download-button {
+    color: var(--default-text);
+    background: var(--default-button);
+    margin: 15px;
+    padding: 15px;
+    padding-left: 50px;
+    padding-right: 50px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+}
+.download-button:hover {
+    background: var(--default-button-hover);
 }
 
 /* Footer Icons */
@@ -130,6 +216,13 @@ footer {
 @media screen and (orientation: landscape) {
     h1 {
         font-size: 4vw;
+    }
+    h2 {
+        font-size: 2vw;
+    }
+
+    button {
+        font-size: 1.25vw;
     }
 
     footer {
@@ -159,6 +252,11 @@ footer {
         height: auto;
     }
 
+    .download-info {
+        border-radius: 10px;
+        width: 50%;
+    }
+
     .github-icon, .telegram-icon {
         width: 1.75vw;
         height: 1.75vw;
@@ -170,6 +268,13 @@ footer {
 @media screen and (orientation: portrait) {
     h1 {
         font-size: 7vw;
+    }
+    h2 {
+        font-size: 5vw;
+    }
+
+    button {
+        font-size: 3vw;
     }
 
     footer {
@@ -197,8 +302,13 @@ footer {
     }
 
     .entry-screenshot {
-        width: 95%;
+        width: 100%;
         height: auto;
+    }
+
+    .download-info {
+        border-radius: 20px;
+        width: 75%;
     }
 
     .github-icon, .telegram-icon {
