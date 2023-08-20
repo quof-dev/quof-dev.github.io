@@ -48,18 +48,13 @@
     );
 }
 
-/* All */
-
-* {
-    transition: all .5s;
-}
-
 /* Body */
 
 body {
     background: var(--default-bg);
     overflow: overlay;
     font-family: Karla;
+    transition: .5s;
 }
 body::-webkit-scrollbar {
     width: 5px;
@@ -83,6 +78,7 @@ h1, h2 {
     width: 100%;
     height: 100%;
     text-align: center;
+    transition: .5s;
 }
 
 /* Image */
@@ -96,6 +92,7 @@ img {
 
 button {
     border: none;
+    transition: .5s;
 }
 
 /* Footer */
@@ -151,16 +148,17 @@ footer {
     box-shadow: 0 0 0 1px rgba(0, 0, 0, .01);
 
     &::after {
+        padding-top: 150px;
         position: absolute;
         content: "";
-        top: 15px;
-        left: 0;
-        right: 0;
+        top: -75px;
+        left: 0px;
+        right: 0px;
         z-index: -1;
         height: 100%;
         width: 100%;
         transform: scale(0.9) translateZ(0);
-        filter: blur(200px);
+        filter: blur(250px);
         background: var(--default-gradient);
         background-size: 200% 200%;
     }
@@ -179,6 +177,7 @@ footer {
     padding: 16px;
     text-align: center;
     backdrop-filter: blur(15px);
+    transition: .5s;
 }
 
 /* Download button */
@@ -209,6 +208,7 @@ footer {
 .github-icon, .telegram-icon {
     filter: invert(var(--default-invert));
     margin: 5px;
+    transition: .5s;
 }
 
 /* Responsive Content [For Desktop] */
